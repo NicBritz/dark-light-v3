@@ -1,5 +1,6 @@
 ---
 import SideNav from "./SideNav.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   activeId: string;
@@ -9,7 +10,7 @@ const { title, activeId } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="corporate">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -29,6 +30,7 @@ const { title, activeId } = Astro.props;
       <SideNav activeId={activeId}>
         <slot />
       </SideNav>
+      <Footer />
     </main>
   </body>
 </html>
