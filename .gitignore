@@ -1,6 +1,10 @@
 # build output
 dist/
 
+# ide configs
+.idea/
+.vscode/
+
 # generated types
 .astro/
 
