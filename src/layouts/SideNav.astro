@@ -1,5 +1,6 @@
 ---
-import DarkLightLogo from "../components/DarkLightLogo.astro";
+import {Image}  from "astro:assets";
+import darkLightLogo from "../Images/dark-light-logo.png";
 const { activeId } = Astro.props;
 ---
 
@@ -12,11 +13,18 @@ const { activeId } = Astro.props;
   />
   <div class="drawer-content flex flex-col">
     <!-- Navbar -->
-    <nav class="navbar mt-2 bg-base-100 shadow-lg">
+    <nav class="navbar bg-base-100 shadow-lg fixed">
       <div class="container mx-auto">
         <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-2xl"
-            ><span class="me-2"><DarkLightLogo /></span>Dark-Light</a
+          <a
+            class="btn btn-ghost normal-case text-2xl hover:bg-base-300"
+            href="/"
+            ><span class="me-2 w-8"
+              ><Image
+                src={darkLightLogo}
+                alt="Dark-Light site logo image"
+              /></span
+            >Dark-Light</a
           >
         </div>
         <div class="flex-none lg:hidden">
@@ -46,14 +54,24 @@ const { activeId } = Astro.props;
       </div>
     </nav>
     <!-- Page content here -->
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto">
       <slot />
     </div>
   </div>
   <!-- mobile menu -->
   <div class="drawer-side">
     <label for="my-drawer-3" class="drawer-overlay"></label>
-    <ul class="menu p-4 w-80 min-h-full bg-base-200">
+    <ul class="menu px-4 w-80 min-h-full bg-base-200 space-y-2">
+      <li>
+        <a class="normal-case text-2xl font-semibold" href="/"
+          ><span class="me-2 w-8"
+            ><Image
+              src={darkLightLogo}
+              alt="Dark-Light site logo image"
+            /></span
+          >Dark-Light</a
+        >
+      </li>
       <!-- Sidebar content here -->
       <li><a href="/" id="m-home">Home</a></li>
       <li><a href="/projects" id="m-projects">Projects</a></li>
